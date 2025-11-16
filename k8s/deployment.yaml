@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ucu-de-devops-hw4-part-4
+  name: ucu-de-devops-hw4-part-4
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: ucu-de-devops-hw4-part-4
+  template:
+    metadata:
+      labels:
+        app: ucu-de-devops-hw4-part-4
+    spec:
+      containers:
+        - image: ucu-de-devops-hw4-part-4
+          name: ucu-de-devops-hw4-part-4
+          ports:
+            - name: http
+              containerPort: 8050
